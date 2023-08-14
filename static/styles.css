@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #9a9a9a;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+.project-list {
+    list-style: none;
+    padding: 0;
+}
+
+.project-item {
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project-item p {
+    margin: 5px 0;
+}
+
+.project-item a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.project-item a:hover {
+    text-decoration: underline;
+}
