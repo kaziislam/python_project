@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>GitHub Projects</title>
+</head>
+<body>
+    <div class="container">
+        <h1>GitHub Projects</h1>
+        <ul class="project-list">
+            {% for project in projects %}
+                <li class="project-item">
+                    <p>ID: {{ project.id }}</p>
+                    <p>Name: {{ project.name }}</p>
+                    <p>Project Url: <a href="{{ project.html_url }}" target="_blank">{{ project.html_url }}</a></p>
+                    <p>Deployment URL: <a href="{{ project.deployments_url }}" target="_blank">{{ project.deployments_url }}</a></p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

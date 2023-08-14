@@ -1,17 +1,18 @@
-#import user
-from user import User
-from post import Post
+import requests
 
-# create an object from class
-app_user_one = User("joe@email.com", "Joe Smith", "Passw0rd", "Software Engineer")
-app_user_one.get_user_info()
+# this for GitLAB
+# response = requests.get("https://gitlab.com/api/v4/users/nanuchi/projects")
 
-app_user_one = User("jane@email.com", "Jane Doe", "Passw0rd", "DevOps Engineer")
-app_user_one.get_user_info()
+#this is for Github
+response = requests.get("https://api.github.com/users/kaziislam/repos")
+# print(response)
 
+# print(type(response.json()))
+print(response.json()[0])
+my_projects = response.json()
 
-app_user_one.change_job_title("DevOps Engineer")
-app_user_one.get_user_info()
-
-new_post = Post("Learning Python", app_user_one.name)
-new_post.get_post_info()
+for project in my_projects:
+    # for Gitlab
+    # print(f"Project Name: {project['name']}\n Project Url: {project['web_url']}\n")
+    # for Github
+    print(f"ID: {project['id']}\n Name: {project['name']}\n Project Url: {project['url']}\n Deployment URL: {project['deployments_url']}\n")
